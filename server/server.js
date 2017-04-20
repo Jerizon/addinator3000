@@ -1,10 +1,29 @@
 const http = require('http');
+const fs = require('fs');
+const url = require('url');
 
 const server = http.createServer(function(request, response) {
-	response.end('Hello world!');
+  
+  const urlPath = url.parse(request.url).pathname;
+  const filePath = `.${urlPath}`;
 
+  fs.exists(filePath, function(doesExist){
+  	if(!doesExist) {
+  		response.statusCode = 404;
+  		response.end(`Resource not found: "${urlPath}"`);
+  	}
+  });
+
+  fs.readFile(filePath, (err, data) => {
+  	if(err) {
+  		response.end();
+  	} else {
+  		response.end(data.toString('utf-8'));
+  	}
+  }); 
 });
 
 server.listen(3000, function(){
-	console.log('Server listening...');
-})
+  console.log('Server listening...');
+});
+
