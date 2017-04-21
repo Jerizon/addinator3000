@@ -1,0 +1,9 @@
+{
+	"name": "Addinator",
+	"version": "Sample app showing simple adding function deployed to the cloud",
+	"main": "server/server.js",
+	"scripts": {
+		"start": "node server/server.js"
+	},
+	"license":"MIT"
+}
