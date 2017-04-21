@@ -1,9 +1,13 @@
 {
-	"name": "Addinator",
-	"version": "Sample app showing simple adding function deployed to the cloud",
-	"main": "server/server.js",
-	"scripts": {
-		"start": "node server/server.js"
-	},
-	"license":"MIT"
+  "name": "Addinator",
+  "version": "Sample app showing simple adding function deployed to the cloud",
+  "main": "server/server.js",
+  "scripts": {
+    "postinstall": "browserify client/app.js -o client/bundle.js",
+    "start": "node server/server.js",
+  },
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "^14.3.0"
+  }
 }
