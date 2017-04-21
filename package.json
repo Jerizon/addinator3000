@@ -1,6 +1,7 @@
 {
   "name": "Addinator",
-  "version": "Sample app showing simple adding function deployed to the cloud",
+  "version": "0.1.0",
+  "description": "Sample app showing simple adding function deployed to the cloud",
   "main": "server/server.js",
   "scripts": {
     "postinstall": "browserify client/app.js -o client/bundle.js",
